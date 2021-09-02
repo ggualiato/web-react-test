@@ -1,0 +1,14 @@
+overwrite: true
+schema:
+    - https://harura-fliper-test.herokuapp.com/v1/graphql:
+          headers:
+              X-Hasura-Admin-Secret: fliperdevtest2020
+documents: "./src/queries/**/*"
+generates:
+    src/generated/graphql.tsx:
+        plugins:
+            - "typescript"
+            - "typescript-operations"
+            - "typescript-react-apollo"
+        config:
+            withHooks: true
