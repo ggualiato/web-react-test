@@ -6,7 +6,6 @@ const NavBar: FC = () => {
 
     useEffect(() => {
         if (darkModeEnabled) {
-            console.log(`e`, darkModeEnabled);
             document.documentElement.setAttribute("data-theme", "dark");
         } else {
             document.documentElement.setAttribute("data-theme", "light");
@@ -21,7 +20,6 @@ const NavBar: FC = () => {
         <nav>
             <span>Fliper Test</span>
             <Switch onChange={onChange} checked={darkModeEnabled} />
-            {/* <button onClick={onChange}>dark moderas</button> */}
         </nav>
     );
 };
