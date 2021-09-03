@@ -7,8 +7,7 @@
         "build:prod": "webpack --env prod",
         "build:dev": "webpack --env dev",
         "start": "webpack serve",
-        "server": "node server/server.js",
-        "codegen": "graphql-codegen --config codegen.yml"
+        "server": "node server/server.js"
     },
     "keywords": [],
     "author": "",
