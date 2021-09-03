@@ -15,7 +15,7 @@ const WealthSummaries: FC = () => {
     const wealthSummary = wealthSummaries.find((w) => w.id === wealthSummaryId);
 
     return (
-        <div className="my-summary-list_container">
+        <div className="wealth-summary-list_container">
             <WealthSummaryCard
                 total={wealthSummary?.total}
                 profitability={wealthSummary?.profitability}

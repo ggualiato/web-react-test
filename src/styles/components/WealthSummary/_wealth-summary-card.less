@@ -1,16 +1,11 @@
-.my-summary_container {
+.wealth-summary_container {
     margin: 15px;
     width: 21.875rem;
     height: auto;
     border-radius: 1.25rem;
-    background-color: @white;
+    background-color: var(--background-card-color);
     padding: 24px;
-    box-shadow: @shadow 1px 2px 2px;
-
-    hr {
-        border: 0.5 solid @shadow;
-        box-shadow: @shadow;
-    }
+    box-shadow: var(--box-shadow-color) 1px 2px 2px;
 
     footer {
         display: flex;
@@ -27,13 +22,13 @@
             border: transparent;
             border-radius: 1.25rem;
             &:hover {
-                background-color: @white-hover;
+                background-color: var(--background-hover-color);
             }
         }
     }
 }
 
-.my-summary_header {
+.wealth-summary_header {
     .font-highlight(25pt);
     display: flex;
     justify-content: space-between;
@@ -43,13 +38,13 @@
         background-color: transparent;
         border: transparent;
         &:hover {
-            background-color: @white-hover;
+            background-color: var(--background-hover-color);
             border-radius: 100px;
         }
     }
 }
 
-.my-summary_total_container {
+.wealth-summary_total_container {
     .font-highlight();
     display: flex;
     flex-direction: column;
@@ -60,9 +55,10 @@
     }
 }
 
-.my-summary_summary-container {
+.wealth-summary_summary-container {
     display: flex;
     flex-direction: column;
+
     .summary-item {
         .font-highlight(18pt);
         display: flex;

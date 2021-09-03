@@ -3,7 +3,7 @@ import Skeleton from "react-loading-skeleton";
 import ThreeDots from "../../assets/three-dots.svg";
 import Button from "../Common/Button";
 
-const classNamePrefix = "my-summary";
+const classNamePrefix = "wealth-summary";
 
 interface WealthSummaryProps {
     total: number;
