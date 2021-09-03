@@ -1,6 +1,6 @@
 import React, { FC } from "react";
 import NavBar from "./Common/NavBar";
-import WealthSummariesContainer from "./WealthSummaries";
+import WealthSummariesContainer from "./Container";
 
 const App: FC = () => {
     return (

@@ -1,4 +1,4 @@
-import React, { FC } from "react";
+import React, { FC, Fragment } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { WealthSummaryCard } from "../WealthSummary/WealthSummaryCard";
 import { RootState } from "../../store/store";
@@ -15,7 +15,7 @@ const WealthSummaries: FC = () => {
     const wealthSummary = wealthSummaries.find((w) => w.id === wealthSummaryId);
 
     return (
-        <div className="wealth-summary-list_container">
+        <Fragment>
             <WealthSummaryCard
                 total={wealthSummary?.total}
                 profitability={wealthSummary?.profitability}
@@ -34,7 +34,7 @@ const WealthSummaries: FC = () => {
                     </div>
                 }
             </WealthSummaryCard>
-        </div>
+        </Fragment>
     );
 };
 

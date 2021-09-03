@@ -4,7 +4,7 @@ import { useDispatch } from "react-redux";
 import { setWealthSummaries } from "../../actions/wealthSummary";
 import { WealthSummaryQueryResult } from "../../interfaces/WealthSummary";
 import { QUERY_WEALTH_SUMMARY_LIST } from "../../queries/wealthSummary";
-import WealthSummaries from "./WealthSummaries";
+import WealthSummaries from "./Container";
 
 const WealthSummariesContainer = () => {
     const { data, error } = useQuery<WealthSummaryQueryResult>(QUERY_WEALTH_SUMMARY_LIST);

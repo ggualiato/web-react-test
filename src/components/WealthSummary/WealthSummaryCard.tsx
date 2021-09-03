@@ -3,7 +3,7 @@ import Skeleton from "react-loading-skeleton";
 import ThreeDots from "../../assets/three-dots.svg";
 import Button from "../Common/Button";
 
-const classNamePrefix = "wealth-summary";
+const classNamePrefix = "wealth-summary-card";
 
 interface WealthSummaryProps {
     total: number;
@@ -20,7 +20,6 @@ export const WealthSummaryCard: FC<WealthSummaryProps> = (props) => {
         <div className={`${classNamePrefix}_container`}>
             <div className={`${classNamePrefix}_header`}>
                 <span>Seu resumo</span>
-
                 <button>
                     <img src={ThreeDots} />
                 </button>
