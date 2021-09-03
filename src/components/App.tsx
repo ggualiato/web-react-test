@@ -1,7 +1,16 @@
 import React, { FC } from "react";
+import NavBar from "./Common/NavBar";
+import WealthSummariesContainer from "./WealthSummaries";
 
 const App: FC = () => {
-    return <div>Hello</div>;
+    return (
+        <div className="container">
+            <NavBar />
+            <div className="app-content">
+                <WealthSummariesContainer />
+            </div>
+        </div>
+    );
 };
 
-export { App };
+export default App;
