@@ -2,6 +2,7 @@ import React, { FC, useState } from "react";
 import Skeleton from "react-loading-skeleton";
 import ThreeDots from "../../assets/three-dots.svg";
 import Button from "../Common/Button";
+import { currency, percent } from "../../utils/number";
 
 const classNamePrefix = "wealth-summary-card";
 
@@ -27,31 +28,23 @@ const WealthSummaryCard: FC<WealthSummaryProps> = (props) => {
 
             <div className={`${classNamePrefix}_total_container`}>
                 <span>Valor investido</span>
-                <span>{total?.toLocaleString("pt-br", { style: "currency", currency: "BRL" }) || <Skeleton />}</span>
+                <span>{currency(total) || <Skeleton />}</span>
             </div>
 
             <div className={`${classNamePrefix}_summary-container`}>
                 <div className="summary-item">
                     <span>Rentabilidade/mês</span>
-                    {profitability?.toLocaleString("pt-br", {
-                        style: "percent",
-                        maximumFractionDigits: 3,
-                        minimumFractionDigits: 2,
-                    }) || <Skeleton width={100} />}
+                    {percent(profitability) || <Skeleton width={100} />}
                 </div>
 
                 <div className="summary-item">
                     <span>CDI</span>
-                    {cdi?.toLocaleString("pt-br", {
-                        style: "percent",
-                        maximumFractionDigits: 2,
-                        minimumFractionDigits: 2,
-                    }) || <Skeleton width={100} />}
+                    {percent(cdi, { maximumFractionDigits: 2 }) || <Skeleton width={100} />}
                 </div>
 
                 <div className="summary-item">
                     <span>Ganho/mês</span>
-                    {gain?.toLocaleString("pt-br", { style: "currency", currency: "BRL" }) || <Skeleton width={100} />}
+                    {currency(gain) || <Skeleton width={100} />}
                 </div>
             </div>
 
