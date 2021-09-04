@@ -4,7 +4,8 @@ const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const { merge } = require("webpack-merge");
 const webpackDevConfig = require("./config/webpack.dev.config");
 const webpackProdConfig = require("./config/webpack.prod.config");
-require("dotenv").config();
+const webpack = require("webpack");
+require("dotenv").config({ path: ".env" });
 
 const commonConfig = {
     entry: "./src/index.tsx",
@@ -46,7 +47,13 @@ const commonConfig = {
             },
         ],
     },
-    plugins: [new CleanWebpackPlugin(), new MiniCssExtractPlugin({ filename: "styles.css" })],
+    plugins: [
+        new CleanWebpackPlugin(),
+        new MiniCssExtractPlugin({ filename: "styles.css" }),
+        new webpack.DefinePlugin({
+            "process.env.HASURA_ADMIN_SECRET": JSON.stringify(process.env.HASURA_ADMIN_SECRET),
+        }),
+    ],
 };
 
 module.exports = (env) => {
