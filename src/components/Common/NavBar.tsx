@@ -1,5 +1,5 @@
 import React, { FC, useEffect, useState } from "react";
-import Switch from "react-switch";
+import DarkModeToggle from "react-dark-mode-toggle";
 
 const NavBar: FC = () => {
     const [darkModeEnabled, setDarkModeEnabled] = useState(false);
@@ -19,7 +19,7 @@ const NavBar: FC = () => {
     return (
         <nav>
             <span>Fliper Test</span>
-            <Switch onChange={onChange} checked={darkModeEnabled} />
+            <DarkModeToggle onChange={onChange} checked={darkModeEnabled} />
         </nav>
     );
 };
