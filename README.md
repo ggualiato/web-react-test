@@ -5,8 +5,11 @@
 Clone down this repository. You will need `node` and `npm` installed globally on your machine.
 
 1 - `git clone https://github.com/ggualiato/web-react-test.git`
+
 2 - `npm install`
+
 3 - `npm start`
+
 4 - Open `http://localhost:3000/` in the browser
 
 Installation:
@@ -23,7 +26,7 @@ To Start Server:
 
 To Visit App:
 
-`localhost:3000/ideas`
+`localhost:3000/`
 
 To Build
 
