@@ -4,7 +4,7 @@ import { WealthSummaryCard } from "../WealthSummary/WealthSummaryCard";
 import { RootState } from "../../store/store";
 import { setWealthSummary } from "../../actions/wealthSummary";
 
-const WealthSummaries: FC = () => {
+const Container: FC = () => {
     const { wealthSummaries, wealthSummaryId } = useSelector(({ wealthSummary }: RootState) => wealthSummary);
     const dispatch = useDispatch();
 
@@ -14,6 +14,20 @@ const WealthSummaries: FC = () => {
 
     const wealthSummary = wealthSummaries.find((w) => w.id === wealthSummaryId);
 
+    const renderAccountsList = () => {
+        return (
+            <div className="accounts-list_container smooth-fade-in">
+                {wealthSummaries
+                    .filter((summary) => summary.id !== wealthSummary.id)
+                    .map((summary) => (
+                        <button onClick={() => handleClick(summary.id)} key={summary.id}>
+                            Conta {summary.id}
+                        </button>
+                    ))}
+            </div>
+        );
+    };
+
     return (
         <Fragment>
             <WealthSummaryCard
@@ -22,20 +36,10 @@ const WealthSummaries: FC = () => {
                 gain={wealthSummary?.gain}
                 cdi={wealthSummary?.cdi}
             >
-                {
-                    <div className="show-more_container">
-                        {wealthSummaries
-                            .filter((summary) => summary.id !== wealthSummary.id)
-                            .map((summary) => (
-                                <button onClick={() => handleClick(summary.id)} key={summary.id}>
-                                    Conta {summary.id}
-                                </button>
-                            ))}
-                    </div>
-                }
+                {renderAccountsList()}
             </WealthSummaryCard>
         </Fragment>
     );
 };
 
-export default WealthSummaries;
+export default Container;

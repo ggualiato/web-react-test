@@ -4,7 +4,7 @@ import { useDispatch } from "react-redux";
 import { setWealthSummaries } from "../../actions/wealthSummary";
 import { WealthSummaryQueryResult } from "../../interfaces/WealthSummary";
 import { QUERY_WEALTH_SUMMARY_LIST } from "../../queries/wealthSummary";
-import WealthSummaries from "./Container";
+import Container from "./Container";
 
 const WealthSummariesContainer = () => {
     const { data, error } = useQuery<WealthSummaryQueryResult>(QUERY_WEALTH_SUMMARY_LIST);
@@ -12,7 +12,6 @@ const WealthSummariesContainer = () => {
 
     useEffect(() => {
         if (data) {
-            console.log(JSON.stringify(data));
             dispatch(setWealthSummaries(data.wealthSummary));
         }
     }, [data]);
@@ -21,7 +20,7 @@ const WealthSummariesContainer = () => {
         return <div>ERROR</div>;
     }
 
-    return <WealthSummaries />;
+    return <Container />;
 };
 
 export default WealthSummariesContainer;
