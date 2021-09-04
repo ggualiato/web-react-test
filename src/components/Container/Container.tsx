@@ -1,6 +1,6 @@
 import React, { FC, Fragment } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { WealthSummaryCard } from "../WealthSummary/WealthSummaryCard";
+import WealthSummaryCard from "../WealthSummary/WealthSummaryCard";
 import { RootState } from "../../store/store";
 import { setWealthSummary } from "../../actions/wealthSummary";
 

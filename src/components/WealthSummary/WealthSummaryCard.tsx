@@ -12,7 +12,7 @@ interface WealthSummaryProps {
     cdi: number;
 }
 
-export const WealthSummaryCard: FC<WealthSummaryProps> = (props) => {
+const WealthSummaryCard: FC<WealthSummaryProps> = (props) => {
     const [showMore, setShowMore] = useState(false);
     const { total, profitability, cdi, gain } = props;
 
@@ -64,3 +64,5 @@ export const WealthSummaryCard: FC<WealthSummaryProps> = (props) => {
         </div>
     );
 };
+
+export default WealthSummaryCard;
