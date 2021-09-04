@@ -6,12 +6,12 @@ interface WealthSummaryReducer {
     wealthSummaryId?: number;
 }
 
-const wealthSummaryDefaulState: WealthSummaryReducer = {
+export const wealthSummaryDefaulState: WealthSummaryReducer = {
     wealthSummaries: [],
     wealthSummaryId: undefined,
 };
 
-type Action = ActionSetWealthSummaries | ActionSetWealthSummary;
+export type Action = ActionSetWealthSummaries | ActionSetWealthSummary;
 
 export const wealthSummaryReducer = (state = wealthSummaryDefaulState, action: Action): WealthSummaryReducer => {
     switch (action.type) {

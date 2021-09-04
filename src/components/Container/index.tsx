@@ -12,6 +12,7 @@ const WealthSummariesContainer = () => {
 
     useEffect(() => {
         if (data) {
+            console.log(JSON.stringify(data));
             dispatch(setWealthSummaries(data.wealthSummary));
         }
     }, [data]);

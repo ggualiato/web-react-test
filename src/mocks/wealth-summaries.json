@@ -1,0 +1,20 @@
+{
+    "wealthSummaries": [
+        {
+            "cdi": 3.45678,
+            "gain": 1833.23,
+            "hasHistory": true,
+            "id": 2,
+            "profitability": 2.76789,
+            "total": 3200876
+        },
+        {
+            "cdi": 2,
+            "gain": 400,
+            "hasHistory": false,
+            "id": 1,
+            "profitability": 4.5,
+            "total": 6470.1
+        }
+    ]
+}
